@@ -1,5 +1,5 @@
 function makeUsersTable() {
-    axios.get("/BoulderBucketList/userApp/user")
+    axios.get("/bbl/userApp/user")
         .then(response => {
             response.data.forEach(user => {
                 let table = document.getElementById('names');
@@ -28,7 +28,7 @@ function addUser() {
             "name": name.value,
             "boulders": []
         };
-        axios.post("/BoulderBucketList/userApp/user", user).then( () => {
+        axios.post("/bbl/userApp/user", user).then( () => {
             window.location.reload();
         });
     }
